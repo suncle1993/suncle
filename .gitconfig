@@ -1,0 +1,86 @@
+[alias]
+    aa = add .
+    ag = reset HEAD^  # again
+    b = branch
+    bd = branch -D
+    br = branch
+    ca = commit --all
+    cb = checkout -b
+    changed = update-index --no-assume-unchanged  # revert op of `git unchanged`
+    ci = commit
+    cia = commit --all
+    clone = clone -o o
+    cm = commit --amend --no-edit --all
+    co = checkout
+    crp = cherry-pick
+    d = diff
+    dfl = diff --name-status  # diff and list name
+    dfs = diff --staged
+    dl = diff HEAD^
+    f = fetch o --tags
+    g = grep -in  # ignore case, line number
+    hide = update-index --assume-unchanged  # same with `git unchanged`
+    last = log -1 HEAD
+    ld = stash pop
+    load = stash pop
+    logg = log --graph --decorate --oneline --abbrev-commit --all  # VERY VERY useful command
+    logo = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --no-merges
+    logs = log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    mgf = merge --ff-only
+    p = push
+    pa = push --all
+    pd = push o -o merge_request.create -o merge_request.target=dev HEAD -f
+    pf = push -f
+    pl = pull --rebase
+    pm = push o -o merge_request.create -o merge_request.target=master HEAD -f
+    po = push o
+    ps = push
+    pull = pull --rebase
+    puo = push -u o
+    puod = push -u o -o merge_request.create -o merge_request.target=dev
+    puof = push -u o -o merge_request.create -o merge_request.target=freeze
+    puom = push -u o -o merge_request.create -o merge_request.target=master
+    puz = push -u z
+    puzd = push -u z -o merge_request.create -o merge_request.target=dev
+    puzm = push -u z -o merge_request.create -o merge_request.target=master
+    rb = rebase
+    rbc = rebase --continue
+    rbi = rebase -i  # if there's only one git command you should learn, it'll be `git rebase`
+    rd = rebase o/HEAD
+    regret = reset HEAD^  # regret last commit, same with `git ag`
+    rg = reset HEAD^
+    rh = reset --hard
+    rhd = reset --hard o/HEAD
+    rp = remote prune
+    rpo = remote prune o
+    rroo = remote rename origin o
+    rs = reset
+    save = stash
+    slog = log --graph --decorate --oneline --all --simplify-by-decoration
+    sm = submodule
+    squash = rebase HEAD~2 -i
+    st = status
+    sv = stash
+    unchanged = update-index --assume-unchanged  # assume a file is unchanged, often use to change some local config
+    unhide = update-index --no-assume-unchanged  # same with `git changed`
+    wp = commit --all --message 'feat: WIP' --allow-empty --no-verify  # commit with Work In Progress quickly
+    wj = commit --all --message 'JIRA-123: WIP' --allow-empty --no-verify  # commit with Jira: Work In Progress quickly
+    yes = log --oneline --since yesterday --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --no-merges  # see what's new since yesterday
+[core]
+    autocrlf = false
+    editor = vim
+    eol = lf
+    excludesfile = ~/.gitignore
+    ignorecase = false
+    pager = less --raw-control-chars
+[color]
+    ui = true
+[merge]
+    tool = vimdiff
+[push]
+    default = simple
+[user]
+    name = chenliang4
+    email = chenliang4@yy.com
+[includeIf "gitdir:~/yy/"]
+    path = .gitconfig-yy
