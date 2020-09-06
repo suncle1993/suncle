@@ -80,7 +80,8 @@
 [push]
     default = simple
 [user]
-    name = chenliang4
-    email = chenliang4@yy.com
+	name = suncle
+	email = im.suncle@gmail.com
+
 [includeIf "gitdir:~/yy/"]
     path = .gitconfig-yy
